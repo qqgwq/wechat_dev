@@ -1,0 +1,16 @@
+button:
+  - type: view
+    name: 我的
+    url: <%= @config.oauth2_entrance_url(scope: 'snsapi_userinfo', state: 'profile') %>  #用户认证授权
+  - type: view
+    name: 课程
+    sub_button:
+      - type: view
+        name: 免费课程
+        url: <%= @config.oauth2_entrance_url(scope: 'snsapi_userinfo', state: 'free') %>
+      - type: view
+        name: 付费课程
+        url: <%= @config.oauth2_entrance_url(scope: 'snsapi_userinfo', state: 'paid') %>
+      - type: view
+        name: 分享测试
+        url: <%= @config.config['host'] + "/wechat/ticket/share_test" %>
